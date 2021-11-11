@@ -1,0 +1,56 @@
+<div class="text-center pb-3 my-5">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-3">
+            <!--Card-->
+            <mdb-card cascade="true" wider="true" class="card-ecommerce">
+                <h5 class="title">{{item.title}}</h5>
+
+                <!--Card image-->
+                <div class="view view-cascade overlay waves-light p-2" mdbWavesEffect>
+                    <mdb-card-img class="img-fluid" alt="sample photo" src="{{item.image}}">
+                    </mdb-card-img>
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <!--Card image-->
+                <!--Card content-->
+                <mdb-card-body cascade="true" class="text-center no-padding">
+                    <!--Category & Title-->
+                    <a href="" class="text-muted">
+                        <h5>{{item.category}}</h5>
+                    </a>
+                    <mdb-card-title>
+                        <h4>
+                            <strong>
+                        {{item.title}}
+                    </strong>
+                        </h4>
+                    </mdb-card-title>
+                    <!--Description-->
+                    <mdb-card-text>
+                        <p class="description">{{item.description}}</p>
+                    </mdb-card-text>
+                    <!--Card footer-->
+                    <mdb-card-footer>
+                        <span class="float-left font-weight-bold">
+                    <strong> <p>Price: {{item.price | currency:'EGP'}}</p></strong>
+                  </span>
+                        <span class="float-right">
+                    <a class="" data-toggle="tooltip" data-placement="top" title="Quick Look">
+                      <mdb-icon far icon="eye" class="grey-text ml-3"></mdb-icon>
+                    </a>
+                    <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                      <mdb-icon fas icon="heart" class="grey-text ml-3"></mdb-icon>
+                    </a>
+                  </span>
+                    </mdb-card-footer>
+                </mdb-card-body>
+                <!--Card content-->
+            </mdb-card>
+            <!--Card-->
+        </div>
+    </div>
+    <!--Grid row-->
+</div>
+<!--Section: Products v.2-->

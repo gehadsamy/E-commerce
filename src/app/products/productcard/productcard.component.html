@@ -1,0 +1,26 @@
+<div class="card m-3 p-2">
+    <div class="bg-image hover-overlay ripple " data-mdb-ripple-color="light">
+        <div class="img d-flex justify-content-center mb-3">
+            <img class="img-fluid" src="{{item.image}}" alt="" (click)="details(item)">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"><a [routerLink]="['/details', item.id]" routerLinkActive="active" [state]="{ data: item}">{{item.title}} - {{item.category}}</a></h5>
+            <div class="card-text">
+
+                <p class="description">{{item.description}}</p>
+
+                <p>Price: {{item.price | currency:'EGP'}}</p>
+
+            </div>
+
+        </div>
+
+        <div class="" style="text-align: center;">
+            <button type="button" class="btn btn-primary btn-sm mr-1 waves-effect waves-light" (click)="addtoCart(item)">Add to cart</button>
+            <button type="button" class="btn btn-primary btn-sm mr-1 waves-effect waves-light" (click)="checkWishlist(item, $event)">Add to wishlist</button>
+            <ng-template #remove>
+                <button type="button" class="btn btn-primary btn-sm mr-1 waves-effect waves-light" (click)="checkWishlist(item, $event)">Remove from wishlist</button>
+            </ng-template>
+        </div>
+    </div>
+</div>

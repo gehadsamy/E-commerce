@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center">
+    <app-loader></app-loader>
+</div>
+
+<div class="container-fluid">
+
+    <div class="text-center">
+        <!--Grid row-->
+        <div class="row p-5">
+            <mdb class="align-items-center col-lg-4 col-md-6 p-3" *ngFor="let item of list">
+
+                <div class="view overlay waves-light" mdbWavesEffect>
+                    <div class="cards-list">
+                        <app-productcard [item]="item"></app-productcard>
+                    </div>
+                </div>
+
+            </mdb>
+        </div>
+    </div>
+</div>

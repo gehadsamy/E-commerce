@@ -1,0 +1,9 @@
+<div class="row col-md-12 justify-content-start" style="height: fit-content;" *ngIf="wishlist.length > 0; else emptywish">
+    <h1 style="width: 100%; text-align: center; height: fit-content;">My Wishlist</h1>
+    <div class="cards-list col-md-3" style="height: fit-content;" *ngFor="let wish of wishlist">
+        <app-productcard [item]="wish" [wish]="true"></app-productcard>
+    </div>
+</div>
+<ng-template #emptywish class= "wish m-5">
+    <div class="row col-md-3"><h1 style="width: 100%; text-align: center;">Empty Wishlist</h1></div>
+</ng-template>

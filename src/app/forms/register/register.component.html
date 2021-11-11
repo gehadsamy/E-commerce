@@ -1,0 +1,93 @@
+<div class="container">
+    <form class="form__container" [formGroup]="registerForm" (ngSubmit)="submitReactiveForm()">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+
+            <div class="form-group form-outline">
+                <input type="text" id="form3Example1" class="form-control" required name="nameInput" formControlName="nameInput" />
+                <label class="form-label" for="form3Example1">Name</label>
+
+                <mdb-error *ngIf="registerFormControls.nameInput.touched && !registerFormControls.nameInput.valid">Input invalid</mdb-error>
+                <mdb-success *ngIf="registerFormControls.nameInput.valid && registerFormControls.nameInput.touched">Input valid</mdb-success>
+            </div>
+
+
+
+            <!-- Email input -->
+            <div class="form-group form-outline mb-4">
+                <input type="email" id="form3Example3" class="form-control" formControlName="emailInput" required/>
+                <label class="form-label" for="form3Example3">Email address</label>
+
+                <mdb-error *ngIf="registerFormControls.emailInput.touched && !registerFormControls.emailInput.valid">Input invalid</mdb-error>
+                <mdb-success *ngIf="registerFormControls.emailInput.valid && registerFormControls.emailInput.touched">Input valid</mdb-success>
+            </div>
+
+
+            <!-- Password input -->
+            <div class="form-outline mb-4 form-group">
+
+
+
+                <input type="password" id="form3Example4" class="form-control" formControlName="passwordInput" required/>
+                <label class="form-label" for="form3Example4">Password</label>
+                <div *ngIf="registerFormControls.passwordInput.touched && !registerFormControls.passwordInput.valid">
+                    <mdb-error *ngIf="registerFormControls.passwordInput.touched && !registerFormControls.passwordInput.valid">Input invalid</mdb-error>
+
+
+                    <mdb-success *ngIf="registerFormControls.passwordInput.valid && registerFormControls.passwordInput.touched">Input valid</mdb-success>
+                    <mdb-error *ngIf="registerFormControls.passwordInput.errors.pattern">This password must contains at least one lowercase , uppercase , numebr and special characters youpass lenght (8==>20) ex:Password@1 )
+                    </mdb-error>
+                    <!-- <mdb-success *ngIf="!registerFormControls.passwordInput.errors.pattern">This password must contains 
+                    </mdb-success> -->
+                </div>
+
+
+            </div>
+
+
+            <div class="form-outline mb-4 form-group">
+
+
+
+                <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword" required/>
+                <label class="form-label" for="form3Example4">Confirm password</label>
+
+                <div *ngIf="registerFormControls.confirmPassword.touched && registerFormControls.confirmPassword.invalid" class="alert alert-danger">
+                    <div *ngIf="registerFormControls.confirmPassword.errors.required">Password is required.</div>
+                    <div *ngIf="registerFormControls.confirmPassword.errors.matching">Password and Confirm Password must be match.</div>
+
+                </div>
+                <!-- <div *ngIf="registerFormControls.confirmPassword.touched && registerFormControls.confirmPassword.invalid" class="alert alert-sucsses">
+                <div *ngIf="!registerFormControls.confirmPassword.errors.matching">Password and Confirm Password be match.</div>
+
+              
+            </div> -->
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!registerForm.valid">Sign up</button>
+
+            <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!registerForm.valid" (click)="address()">Add address</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>or sign up with:</p>
+                <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+
+                <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+            </div>
+        </div>
+    </form>
+</div>
